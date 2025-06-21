@@ -1,5 +1,5 @@
 
-from ins_giriş import username,password
+from know_user import username,password
 from playwright import * 
 from playwright.sync_api import sync_playwright
 
@@ -7,7 +7,7 @@ class instagram():
     def __init__(self,username,password):
         self.username=username
         self.password=password
-    def giris(self):
+    def entrance(self):
         self.playwright = sync_playwright().start()
         self.browser = self.playwright.chromium.launch(headless=False)
         self.page = self.browser.new_page()
@@ -42,5 +42,5 @@ class instagram():
         self.browser.close()
         
 ins=instagram(username,password)
-ins.giris()
+ins.entrance()
 
