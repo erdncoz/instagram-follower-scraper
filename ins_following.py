@@ -9,7 +9,7 @@ class instagram():
         self.password=password
     def entrance(self):
         self.playwright = sync_playwright().start()
-        self.browser = self.playwright.chromium.launch(headless=False)
+        self.browser = self.playwright.chromium.launch(headless=True)
         self.page = self.browser.new_page()
         self.page.goto(f"https://www.instagram.com")
         self.page.locator('[name="username"]').fill(self.username)
